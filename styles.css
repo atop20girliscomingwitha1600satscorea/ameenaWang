@@ -1,0 +1,521 @@
+/* CSS Variables: Define theme colors */
+:root {
+    --federal-blue: #03045eff; /* Primary text color and important elements */
+    --marian-blue: #023e8aff; /* Navigation and contact sections */
+    --honolulu-blue: #0077b6ff; /* Button hover color */
+    --blue-green: #0096c7ff; /* Highlights and links */
+    --pacific-cyan: #00b4d8ff; /* Accent color */
+    --vivid-sky-blue: #48cae4ff; /* Light accents */
+    --non-photo-blue: #90e0efff; /* Background elements */
+    --non-photo-blue-2: #ade8f4ff; /* Additional background or border */
+    --light-cyan: #caf0f8ff; /* General background color */
+}
+
+/* Add this style for a fixed navigation bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff; /* Adjust as needed */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
+
+/* Add padding to the top of the page to prevent content overlap */
+body {
+    margin-top: 60px; /* Adjust the value to match the height of the navbar */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333; /* Adjust color as needed */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF; /* Adjust hover color */
+}
+/* Add a gentle fade-in effect to sections when they scroll into view */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    opacity: 0; /* Start invisible */
+    animation: fadeInUp 0.8s ease forwards; /* Trigger fadeInUp on scroll */
+    animation-delay: 0.2s; /* Optional delay */
+}
+
+/* Slide-in animation for hero text */
+.hero-left {
+    opacity: 0;
+    transform: translateX(-50px); /* Slide from left */
+    animation: slideInLeft 0.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Smooth hover effect for project items */
+.project-item {
+    transform: scale(1); /* Default scale */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Add subtle shadow */
+}
+
+/* Fade-in effect for the food section images */
+.food-highlight-image {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+.food-highlight-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.food-overlay {
+    position: relative;
+}
+
+.food-highlight-image {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.food-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.food-overlay:hover .food-highlight-image {
+    transform: scale(1.05); /* Slightly scale up the image */
+    filter: blur(5px); /* Apply blur effect */
+}
+
+.food-overlay:hover .food-text {
+    opacity: 1; /* Show the overlay text */
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Move up slightly on scroll */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Reset position when visible */
+}
+
+.highlight-item {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    transform: translateY(30px);
+}
+
+.highlight-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Smooth transition for navigation links */
+nav ul li a {
+    color: var(--light-cyan);
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--blue-green);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Button bounce effect on hover */
+.cta-button {
+    display: inline-block;
+    position: relative;
+}
+
+.cta-button:hover {
+    animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--federal-blue); /* Primary body text color */
+    background-color: var(--light-cyan); /* Background color for the body */
+}
+
+/* Navigation Styles */
+nav {
+    background: var(--marian-blue); /* Navigation bar background */
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--light-cyan); /* Link color for contrast */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--blue-green); /* Highlight color on hover */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left side of the hero section */
+.hero-left {
+    flex: 1;
+    background-color: var(--non-photo-blue); /* Soft background for text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.cute-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    color: var(--federal-blue); /* Key title color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+    
+}
+
+.hero .hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: var(--federal-blue); /* Subtitle text color */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+    text-decoration: none;
+    color: var(--light-cyan); /* Button text color */
+    background: var(--blue-green); /* Button background color */
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--honolulu-blue); /* Button hover color */
+}
+
+/* Right side of the hero section */
+.hero-right {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevent overflow */
+    object-fit: cover; /* Cover the entire area */
+    transform: translate(-50%, -50%); /* Center the video */
+}
+
+/* Section Styling */
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    border-bottom: 1px solid var(--non-photo-blue-2); /* Subtle border */
+}
+
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--federal-blue); /* Section title color */
+    margin-bottom: 20px;
+    text-align: center; /* Center align title */
+}
+
+.profile-image {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin: 20px auto; /* Center image */
+    border: 4px solid var(--federal-blue); /* Profile image border */
+}
+
+.section p {
+    font-size: 1.2em;
+    color: var(--blue-green); /* Paragraph text color */
+    max-width: 800px;
+    margin: 0 auto 30px; /* Centered paragraph */
+}
+
+/* Highlights Section */
+.highlight-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Center align items */
+}
+
+.highlight-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.highlight-image {
+    max-width: 45%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.highlight-description {
+    max-width: 45%;
+    padding: 0 10px;
+    color: var(--federal-blue); /* Description text color */
+}
+
+/* Projects Section */
+.projects-section {
+    text-align: center; /* Center section content */
+    margin: 2em 0;
+}
+
+.projects-title {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: var(--federal-blue); /* Title color for projects */
+}
+
+.projects-list-container {
+    display: flex;
+    justify-content: center; /* Center the list */
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+}
+
+.project-item {
+    background-color: #fff; /* Background color */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    width: 80%; /* Item width */
+    text-align: center;
+}
+
+/* Skills Section */
+.skills-title {
+    margin-top: 2em;
+    font-size: 1.5em;
+    color: var(--federal-blue); /* Title color for skills */
+}
+
+.skills-container {
+    text-align: center;
+}
+
+/* Impact Section */
+.impact-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.impact-list li {
+    background: var(--non-photo-blue); /* Background color */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: var(--federal-blue); /* List item text color */
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Food Section */
+.food-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--federal-blue); /* Title color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.food-portfolio {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.food-highlight-description {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: var(--federal-blue); /* Description text color */
+}
+
+.food-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.food-highlight-item {
+    text-align: center;
+}
+
+.food-highlight-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    background: var(--marian-blue);
+    color: var(--light-cyan); /* Contrast text color */
+    padding: 60px 20px;
+    border-top: 5px solid var(--non-photo-blue);
+}
+
+.contact h2 {
+    color: var(--light-cyan); /* Heading color */
+}
+
+.contact-info {
+    color: var(--light-cyan); /* Link color */
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.contact-info a {
+    color: var(--light-cyan); /* Link color for email/LinkedIn */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Footer */
+footer {
+    background: var(--marian-blue);
+    color: var(--light-cyan); /* Footer text color */
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

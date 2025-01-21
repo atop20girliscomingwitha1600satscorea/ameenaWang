@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ameena Wang Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeIns = document.querySelectorAll('.fade-in, .highlight-item');
+
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight / 5 * 4;
+
+                fadeIns.forEach((fadeIn) => {
+                    const boxTop = fadeIn.getBoundingClientRect().top;
+
+                    if (boxTop < triggerBottom) {
+                        fadeIn.classList.add('visible');
+                    } else {
+                        fadeIn.classList.remove('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Check visibility on page load
+        });
+</script>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#highlights">Event Highlights</a></li> <!-- Updated here -->
+            <li><a href="#food-portfolio">Food Portfolio</a></li>
+            <li><a href="#impact">My Impact</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-left">
+            <div class="hero-content">
+                <h1 class="cute-title">I AM the <span>Changer</span><br>Ameena Wang</h1>
+                <p class="hero-subtitle">Empowering Through Leadership and Compassion</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>            
+            </div>            
+        </div>
+        <div class="hero-right">
+            <video controls class="background-video">
+                <source src="intro1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section about fade-in">
+            <h2>About Me</h2>
+            <div class="text-content">
+                <img src="images/ProfileAW.jpg" alt="Ameena Wang" class="profile-image">
+                <p>I’m Ameena Wang, a dedicated leader and compassionate advocate for education and the arts. I believe in the power of mentorship and community service to inspire change and uplift those around me.</p>
+                <h3>Education</h3>
+                <p>Currently, I am a senior in high school, actively engaged in various extracurricular activities that foster my passion for leadership and collaboration. I aspire to major in business and computer engineering in college.</p>
+            </div>
+        </section>
+    
+        <!-- Event Highlights Section -->
+        <section id="highlights" class="section highlights fade-in">
+            <h2>Event Highlights</h2>
+            <div class="highlight-grid">
+                <div class="highlight-item" style="display: flex; align-items: center;">
+                    <img src="images/CommunityAW.jpg" alt="Ameena teaching at the Salar School" class="highlight-image">
+                    <div class="highlight-description">
+                        <h3>Teaching at Salar School</h3>
+                        <p>Engaged with students and promoted educational opportunities, emphasizing the importance of education in community development.</p>
+                    </div>
+                </div>
+                <div class="highlight-item" style="display: flex; align-items: center; justify-content: flex-end;">
+                    <div class="highlight-description">
+                        <h3>Performance at Carnegie Hall</h3>
+                        <p>Showcased classical vocal talents at Carnegie Hall through the American Protégé Competition, achieving a lifelong dream of performing on a prestigious stage.</p>
+                    </div>
+                    <img src="images/American Protege May 25A 2024-5948.JPG" alt="Ameena performing at Carnegie Hall" class="highlight-image">
+                </div>
+                <div class="highlight-item" style="display: flex; align-items: center;">
+                    <img src="images/community2.jpg" alt="Ameena donating money and food" class="highlight-image">
+                    <div class="highlight-description">
+                        <h3>Donating Money and Food</h3>
+                        <p>Contributed essential resources to the Salar School, ensuring students have the support they need for their education.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Projects Section -->
+        <section class="projects-section fade-in">
+            <h2 class="projects-title">Projects</h2>
+            <div class="projects-list-container"> 
+                <div class="projects-list">
+                    <div class="project-item">
+                        <h3>Zork</h3>
+                        <p>A text-based adventure game developed using C.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Full Stack Music Tracker</h3>
+                        <p>A full-stack application that tracks music and connects with Spotify to create playlists. Built with Python and mySQL.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="skills-title">Skills</h3>
+                    <div class="skills-container"> 
+                        <ul>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>HTML</li>
+                            <li>C</li>
+                        </ul>
+                    </div>
+                </div>                       
+        </section>
+    
+        <!-- Food Portfolio Section -->
+        <section id="food-portfolio"class="food-portfolio fade-in">
+            <h2 class="food-section-title">Food Portfolio</h2>
+            <div class="food-highlight-grid">
+                
+                
+
+                <!-- Food Items -->
+                <div class="food-highlight-item">
+                    <a href="https://thefoodcharlatan.com/creamy-tuscan-salmon/" target="_blank">
+                        <div class="food-overlay">
+                            <img src="images/food1.jpg" alt="Creamy Tuscan Salmon" class="food-highlight-image">
+                            <div class="food-text">Click for recipe</div>
+                        </div>
+                    </a>
+                    <div class="food-highlight-description">Creamy Tuscan Salmon</div>
+                </div>
+                <div class="food-highlight-item">
+                    <a href="https://food.ninahendrick.com/cranberry-rosemary-butter-cookies/" target="_blank">
+                        <div class="food-overlay">
+                            <img src="images/food2.jpg" alt="Cranberry Rosemary Butter Cookies" class="food-highlight-image">
+                            <div class="food-text">Click for recipe</div>
+                        </div>
+                    </a>
+                    <div class="food-highlight-description">Cranberry Rosemary Butter Cookies</div>
+                </div>
+                <div class="food-highlight-item">
+                    <a href="https://redhousespice.com/snow-skin-mooncake/#recipe" target="_blank">
+                        <div class="food-overlay">
+                            <img src="images/food3.jpg" alt="Snow Skin Mooncakes" class="food-highlight-image">
+                            <div class="food-text">Click for recipe</div>
+                        </div>
+                    </a>
+                    <div class="food-highlight-description">Snow Skin Mooncakes</div>
+                </div>
+                <div class="food-highlight-item">
+                    <a href="https://www.bakewithpaws.com/2023/02/blueberry-bread-buns-soft-and-fluffy.html" target="_blank">
+                        <div class="food-overlay">
+                            <img src="images/food4..jpg" alt="Blueberry Bread Buns" class="food-highlight-image">
+                            <div class="food-text">Click for recipe</div>
+                        </div>
+                    </a>
+                    <div class="food-highlight-description">Blueberry Bread Buns</div>
+                </div>
+                <div class="food-highlight-item">
+                    <a href="https://cloudykitchen.com/blog/vanilla-bean-cream-puffs/" target="_blank">
+                        <div class="food-overlay">
+                            <img src="images/food5.jpg" alt="Vanilla Bean Cream Puffs" class="food-highlight-image">
+                            <div class="food-text">Click for recipe</div>
+                        </div>
+                    </a>
+                    <div class="food-highlight-description">Vanilla Bean Cream Puffs</div>
+                </div>
+                <div class="food-highlight-item">
+                    <a href="https://downshiftology.com/recipes/thanksgiving-turkey-recipe/" target="_blank">
+                        <div class="food-overlay">
+                            <img src="images/food6.jpg" alt="Thanksgiving Turkey" class="food-highlight-image">
+                            <div class="food-text">Click for recipe</div>
+                        </div>
+                    </a>
+                    <div class="food-highlight-description">Thanksgiving Turkey</div>
+                </div>
+            </div>
+        </section>
+            
+        <!-- Impact Section -->
+        <section id="impact" class="section impact fade-in">
+            <h2>My Impact</h2>
+            <ul class="impact-list">
+                <li><strong>Finance Club Leadership:</strong> As co-president, I lead finance projects, organize investment competitions, and mentor new members to understand key financial principles.</li>
+                <li><strong>Band Council:</strong> Serving as the secretary, I manage meeting logistics, document band events, and support the growth of our music program to inspire younger students.</li>
+                <li><strong>AP Computer Science Teaching Assistant:</strong> I assist students with coursework, encourage collaborative problem-solving, and help my instructor with administrative tasks to create a productive class environment.</li>
+                <li><strong>Community Engagement with Pop Dancers League:</strong> As the Junior Video Content Coordinator, I edit and manage content for TikTok, Instagram, and YouTube, helping the organization grow its online presence.</li>
+            </ul>
+        </section>
+    
+        <!-- Contact Section -->
+        <section id="contact" class="section contact fade-in">
+            <h2>Contact Me</h2>
+            <p>If you're interested in collaborating or learning more about my journey, please get in touch!</p>
+            <a href="mailto:ameenawang520@gmail.com" class="contact-info a">Email: ameenawang520@gmail.com</a><br>
+            <a href="https://www.linkedin.com/in/ameena-w-882a43263/" target="_blank" class="contact-info a">Connect with me on LinkedIn</a>
+        </section>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Ameena Wang. All rights reserved.</p>
+    </footer>
+</body>
+</html>
